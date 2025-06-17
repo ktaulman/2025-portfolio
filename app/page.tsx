@@ -1,103 +1,51 @@
-import Image from "next/image";
+import { Suspense } from "react";
+import PageLayout from "./_components/page-layout";
+import SectionHeader from "./_components/text/section-header";
+import Banner from "./(home)/components/banner";
+import JobListings from "./(home)/job-listings";
+import SkillListings from "./(home)/skill-listings";
+// import ContactForm from "./_components/contact-form";
+//Constants
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <PageLayout.Body>
+      <Banner />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <Suspense fallback={"Loading..."}>
+        <JobListings />
+      </Suspense>
+      <SectionHeader>Projects</SectionHeader>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+        <div className="flex flex-col gap-3">
+          <div
+            className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+            style={{
+              backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuDw8nBUmBiN7TQIHZ8a1P1B-KzgM1JwMQg_GGAIWuLyHhOaKR1rDc5u8GtDmhCO0-arkigmJESvbvHP2X5bvb-EAMwnpZDibZBymxBpyzHIehm8cY6V061T3l72rSuU9Y-UnXV_egsKTen0HfTFjFYJm2WYsyyQ6pV_FOMOfVwERvbx6dq-1-ivo80apYidrEAaG-hGRiFZaSc38wdTSEYRTdHDe9D8IVEYmDXDp166iOfpNr2miV0LIBgqlOV48vVCfRumwtBWVLA"`,
+            }}
+          ></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="flex flex-col gap-3">
+          <div
+            className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+            style={{
+              backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_a_UIWxKeoVf9xLxsNpAfDwwTLsp5Sc6coVrjyXWqjTDbhkmdvrGjGwjv60f8hRlXp99YScUZczXFjLw-AbvAvdUPzeoN6P0X5rdR0qsfXTh9TgpCsaHBIKpkrJ_qT6227a9W8O-9HMr2HPk9T4QBtV4rswE5d_XnoI1Js80lD6wXfbKj6GxSJwQLIwlcujajVBagV1zXSgf3HKdb_mZr2dxRihuIUno59o68O_1QFnZJVfQfXoim8_FapkDV4liEDGEDMqlEFjk"`,
+            }}
+          ></div>
+        </div>
+        <div className="flex flex-col gap-3">
+          <div
+            className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+            style={{
+              backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVwvbCAyN9TlOXg4CUyWrqIUf9Aakw_tkZ0ui9OnSlfbWSqtpiXxXV6Ma4b7MeQLb9rFXVy4ojN3iI01GvWqqOGgFm37p_achw3RsTe7ctsLtvgPp48MH_KCADpndphHeP70RYWh-N_vT5P-eKk9Z55Nq2HLShVf-b8uVxfkd-uSGh6qu-0DUiHfrO0vQE871Wg_2PS7ba0RE17gqVFprWxMWZx7_B3X0x9YXVBOd5ESWvy-TbffgZw6D9GUELwl7ssJRkI-_DZ34"`,
+            }}
+          ></div>
+        </div>
+      </div>
+      <Suspense fallback={"Loading..."}>
+        <SkillListings />
+      </Suspense>
+      {/* <ContactForm /> */}
+    </PageLayout.Body>
   );
 }
