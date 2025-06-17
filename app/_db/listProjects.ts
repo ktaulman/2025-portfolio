@@ -2,7 +2,8 @@ export interface Project {
   id: number;
   title: string;
   summary: string;
-  website: string;
+  href: string;
+  imageSrc: string;
   description: string[];
   startYear: number;
   endYear: number;
@@ -19,34 +20,38 @@ const projects: Project[] = [
       "Implemented authentication for users to submit and edit their own reviews, and integrated Steam's public API for up-to-date game information.",
       "Prioritized accessibility and responsive design to ensure a seamless experience across devices.",
     ],
-    website: "",
+    href: "",
+    imageSrc: "https://d1nphsyhf0t2vo.cloudfront.net/project-steambook.png",
     startYear: 2025,
     endYear: 2025,
   },
   {
     title: "Wedding Website",
-    summary: "Designed by my wife, built by me.",
+    summary:
+      "Designed by my wife, built by me. Used for RSVPs, meal selections, and event information.",
     description: [
       "Built to help manage RSVPs, meal choices, and plus ones for our wedding. Searchable by family name and any member could RSVP for the entire family.",
       "Searched and updated a Google Sheet with RSVPs, meal choices, and plus ones. that was editable by my wife and I.",
       "Written in Sveltekit. Deployed on Vercel infrastructure as an SSR application.",
     ],
-    website: "https://wedding.talldev.cloud",
+    href: "https://wedding.talldev.cloud",
+    imageSrc: "https://d1nphsyhf0t2vo.cloudfront.net/project-wedding.png",
     startYear: 2023,
     endYear: 2023,
   },
   {
     title: "Non-Profit IT Volunteer Work",
     summary:
-      "Helped design, build, and deploy a non-profit website for the goal of fundraising, event management, and spreading the mission statement.",
+      "Helped design, build, and deploy a website for fundraising, event management, and spreading the word.",
     description: [
-      "Setup credit, debit, and ACH payments via Stripe on the website, Google Workspace for Nonprofits for email and secure collaboration on Google Drive, a Twilio phone number for event registrations and donations over voice or text, and building a small Sanity CMS UI for enabling self-service by board members.",
+      "Setup credit, debit, and ACH payments via Stripe on the href, Google Workspace for Nonprofits for email and secure collaboration on Google Drive, a Twilio phone number for event registrations and donations over voice or text, and building a small Sanity CMS UI for enabling self-service by board members.",
       "Registered non-profit accounts and secured non-profit discounting from our Twilio, AWS, Google, and Stripe.",
       "Developed a custom event registration system with automated email confirmations and reminders.",
       "Created a blog section for sharing updates and stories, managed by non-technical staff through the CMS.",
       "Ensured the site met accessibility standards and was optimized for search engines.",
     ],
-    website: "https://www.thepavefoundation.org/",
+    href: "https://www.thepavefoundation.org/",
+    imageSrc: "https://d1nphsyhf0t2vo.cloudfront.net/project-pave.png",
     startYear: 2021,
     endYear: 2023,
   },

@@ -20,7 +20,11 @@ function NavLink({ children, href }: LinkProps) {
   );
 }
 function ExternalLink({ children, href }: LinkProps) {
-  return <a href={href}>{children}</a>;
+  return (
+    <a href={href} target="_blank">
+      {children}
+    </a>
+  );
 }
 Navigation.NavLink = NavLink;
 Navigation.ExternalLink = ExternalLink;

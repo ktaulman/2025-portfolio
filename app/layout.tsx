@@ -54,10 +54,13 @@ export default function RootLayout({
             </Navigation>
           </PageLayout.Header>
 
+          {/* Main Body Start */}
           {children}
+          {/* Main Body End */}
+
           <PageLayout.Footer>
             <Navigation>
-              <Navigation.ExternalLink href="#">
+              <Navigation.ExternalLink href="https://www.linkedin.com/in/ktaulman">
                 <LinkedinIcon />
               </Navigation.ExternalLink>
               <Navigation.ExternalLink href="https://www.github.com/ktaulman">
