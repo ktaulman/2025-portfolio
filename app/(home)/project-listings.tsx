@@ -8,14 +8,17 @@ export default async function ProjectListings() {
   return (
     <Column>
       <SectionHeader>Projects</SectionHeader>
-      <div className="flex gap-10">
+      <div className="flex gap-10 flex-col min-md:flex-row">
         {projectsData.map(({ id, title, summary, imageSrc, href }) => {
           return (
             <Card key={id}>
               <Card.Image src={imageSrc} alt={title} width={350} height={300} />
               <Card.Title>{title}</Card.Title>
               <Card.Description>{summary}</Card.Description>
-              <Card.Link href={href}>Live Website</Card.Link>
+              {id === 0 && (
+                <p className="text-xs text-blue-900">Under Development</p>
+              )}
+              {id !== 0 && <Card.Link href={href}>Live Website</Card.Link>}
             </Card>
           );
         })}

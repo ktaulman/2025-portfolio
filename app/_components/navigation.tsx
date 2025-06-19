@@ -7,9 +7,7 @@ type LinkProps = {
 };
 
 function Navigation({ children }: { children: ReactNode }) {
-  return (
-    <nav className="flex items-center gap-4 max-sm:invisible">{children}</nav>
-  );
+  return <nav className="flex items-center gap-4 ">{children}</nav>;
 }
 
 function NavLink({ children, href }: LinkProps) {

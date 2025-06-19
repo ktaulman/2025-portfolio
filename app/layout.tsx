@@ -8,6 +8,8 @@ import Navigation from "./_components/navigation";
 import AvatarIcon from "./(home)/components/icons/avatar-icon";
 import LinkedinIcon from "./(home)/components/icons/linkedin-icon";
 import GithubIcon from "./(home)/components/icons/github-icon";
+import { ScreenWidthProvider } from "./_providers/screen-width-provider";
+import NavigationTopBar from "./(root-layout)/navigation-top-bar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +38,7 @@ export default function RootLayout({
         <title>Document</title>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen`}
       >
         <PageLayout>
           <PageLayout.Header>
@@ -44,14 +46,9 @@ export default function RootLayout({
               <WebsiteIcon />
               <WebsiteHeading>Kevin's Portfolio</WebsiteHeading>
             </div>
-            <Navigation>
-              <Navigation.NavLink href="about">About</Navigation.NavLink>
-              <Navigation.NavLink href="projects">Projects</Navigation.NavLink>
-              <Navigation.NavLink href="skills">Skills</Navigation.NavLink>
-              <Navigation.NavLink href="jobs">Jobs</Navigation.NavLink>
-              <Navigation.NavLink href="contact">Contact</Navigation.NavLink>
-              <AvatarIcon />
-            </Navigation>
+            <ScreenWidthProvider>
+              <NavigationTopBar />
+            </ScreenWidthProvider>
           </PageLayout.Header>
 
           {/* Main Body Start */}

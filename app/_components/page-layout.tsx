@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 function PageLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="w-full flex flex-col justify-start items-start bg-[#111418] dark text-white gap">
+    <div className="w-full flex flex-col justify-start items-start bg-[#111418] dark text-white gap w-screen">
       {children}
     </div>
   );
@@ -18,7 +18,7 @@ function Header({ children }: { children: ReactNode }) {
 }
 function Body({ children }: { children: ReactNode }) {
   return (
-    <main className="w-full max-w-7xl flex flex-col items-start  flex-1 px-24 gap-12">
+    <main className="w-full max-w-7xl flex flex-col items-start  flex-1 px-12 min-m:px-24 gap-12">
       {children}
     </main>
   );
