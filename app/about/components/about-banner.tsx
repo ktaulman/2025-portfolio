@@ -3,7 +3,6 @@ import { useScreenWidthStore } from "@/app/_providers/screen-width-provider";
 import Image from "next/image";
 export default function AboutBanner() {
   const { screenWidth } = useScreenWidthStore();
-  console.log({ screenWidth });
   const svgUnitWidth =
     screenWidth < 650 ? screenWidth * 0.9 : screenWidth * 0.6;
   const x = {
@@ -37,13 +36,12 @@ export default function AboutBanner() {
         width={screenWidth < 650 ? 180 : 200}
         height={screenWidth < 650 ? 180 : 200}
       />
-      <div>
-        <h1 className=" text-4xl tracking-wider">Hi, I&apos;m Kevin.</h1>
-        <p className="text-base text-gray-500 mt-4">Alpharetta, GA</p>
+      <div className="flex flex-col">
+        <h1 className=" text-4xl tracking-wider text-white">Kevin Taulman</h1>
+        <p className="text-base text-gray-500 mt-4">Based in Alpharetta, GA</p>
         <p className="text-base text-gray-500 mt-4">
-          Web Development/Front-End Engineer/Full-Stack Engineer
+          Web Development | Front-End Engineer | Full-Stack Engineer
         </p>
-        <p className="text-base text-gray-500 mt-4">Alpharetta, GA</p>
       </div>
     </div>
   );

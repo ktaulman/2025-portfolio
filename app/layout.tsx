@@ -8,6 +8,7 @@ import Navigation from "./_components/navigation";
 import LinkedinIcon from "./_components/icons/linkedin-icon";
 import GithubIcon from "./_components/icons/github-icon";
 import NavigationTopBar from "./(root-layout)/navigation-top-bar";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,36 +37,36 @@ export default function RootLayout({
         <title>Document</title>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen bg-[#111418] dark flex flex-col`}
       >
-        <PageLayout>
-          <PageLayout.Header>
-            <div className="flex gap-3 items-center">
-              <WebsiteIcon />
-              <WebsiteHeading>Kevin&apos;s Portfolio</WebsiteHeading>
-            </div>
-            <NavigationTopBar />
-          </PageLayout.Header>
+        {/* <PageLayout> */}
+        <PageLayout.Header>
+          <Link href="/" className="flex gap-3 items-center">
+            <WebsiteIcon />
+            <WebsiteHeading>Kevin&apos;s Portfolio</WebsiteHeading>
+          </Link>
+          <NavigationTopBar />
+        </PageLayout.Header>
 
-          {/* Main Body Start */}
-          {children}
-          {/* Main Body End */}
+        {/* Main Body Start */}
+        {children}
+        {/* Main Body End */}
 
-          <PageLayout.Footer>
-            <Navigation>
-              <Navigation.ExternalLink href="https://www.linkedin.com/in/ktaulman">
-                <LinkedinIcon />
-              </Navigation.ExternalLink>
-              <Navigation.ExternalLink href="https://www.github.com/ktaulman">
-                <GithubIcon />
-              </Navigation.ExternalLink>
-            </Navigation>
+        <PageLayout.Footer>
+          <Navigation>
+            <Navigation.ExternalLink href="https://www.linkedin.com/in/ktaulman">
+              <LinkedinIcon />
+            </Navigation.ExternalLink>
+            <Navigation.ExternalLink href="https://www.github.com/ktaulman">
+              <GithubIcon />
+            </Navigation.ExternalLink>
+          </Navigation>
 
-            <p className="text-[#9dabb8] text-base text-center py-2 font-normal leading-normal w-full ">
-              @2024 Kevin&apos;s Portfolio. All rights reserved.
-            </p>
-          </PageLayout.Footer>
-        </PageLayout>
+          <p className="text-[#9dabb8] text-base text-center py-2 font-normal leading-normal w-full ">
+            @2024 Kevin&apos;s Portfolio. All rights reserved.
+          </p>
+        </PageLayout.Footer>
+        {/* </PageLayout> */}
       </body>
     </html>
   );

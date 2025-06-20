@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 function PageLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="w-full flex flex-col justify-start items-start bg-[#111418] dark text-white gap w-screen">
+    <div className="flex flex-col justify-start items-start bg-[#111418] dark text-white gap w-screen h-screen">
       {children}
     </div>
   );
@@ -11,21 +11,21 @@ function PageLayout({ children }: { children: ReactNode }) {
 //child
 function Header({ children }: { children: ReactNode }) {
   return (
-    <header className="w-full flex justify-between border-b border-solid border-b-[#293038] px-8 py-5">
+    <header className="w-full flex justify-between border-b border-solid border-b-[#293038] bg-[#111418]  px-8 py-5">
       {children}
     </header>
   );
 }
 function Body({ children }: { children: ReactNode }) {
   return (
-    <main className="w-full max-w-7xl flex flex-col items-start  flex-1 px-12 min-md:px-64 gap-12 min-md:gap-4">
+    <main className="w-full max-w-7xl flex flex-col items-start  flex-1 px-12 min-md:px-64 gap-10 min-md:gap-4 bg-[#111418] ">
       {children}
     </main>
   );
 }
 function Footer({ children }: { children: ReactNode }) {
   return (
-    <footer className="flex justify-center flex-1  flex-wrap  w-full mt-15">
+    <footer className="flex justify-center bg-[#111418]  flex-wrap  w-full">
       {children}
     </footer>
   );

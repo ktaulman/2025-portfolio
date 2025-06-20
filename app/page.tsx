@@ -1,14 +1,14 @@
 import { Suspense } from "react";
-import PageLayout from "./_components/page-layout";
-import Banner from "./(home)/banner";
-import JobListings from "./(home)/job-listings";
-import SkillListings from "./(home)/skill-listings";
-import ProjectListings from "./(home)/projects/project-listings";
-import Education from "./(home)/eduction";
-import Column from "./_components/layout/column";
-import SectionDescription from "./_components/text/section-description";
-import SectionHeader from "./_components/text/section-header";
-// import ContactForm from "./_components/contact-form";
+import PageLayout from "@/app/_components/page-layout";
+import Banner from "@/app/(home)/banner";
+import JobListings from "@/app/(home)/job-listings";
+import SkillListings from "@/app/(home)/skill-listings";
+import ProjectListings from "@/app/(home)/project-listings";
+import Education from "@/app/(home)/eduction";
+import Column from "@/app/_components/layout/column";
+import SectionDescription from "@/app/_components/text/section-description";
+import SectionHeader from "@/app/_components/text/section-header";
+// import ContactForm from "@/app/_components/contact-form";
 //Constants
 
 export default function Home() {

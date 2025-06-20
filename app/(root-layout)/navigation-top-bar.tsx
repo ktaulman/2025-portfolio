@@ -31,10 +31,11 @@ export default function NavigationTopBar() {
           >
             <Navigation.NavLink
               cssClass={"font-semibold tracking-wider !text-lg"}
-              href="about"
+              href="jobs"
             >
-              About
+              Jobs
             </Navigation.NavLink>
+
             <Navigation.NavLink
               cssClass={"font-semibold tracking-wider !text-lg"}
               href="projects"
@@ -43,21 +44,9 @@ export default function NavigationTopBar() {
             </Navigation.NavLink>
             <Navigation.NavLink
               cssClass={"font-semibold tracking-wider !text-lg"}
-              href="skills"
+              href="about"
             >
-              Skills
-            </Navigation.NavLink>
-            <Navigation.NavLink
-              cssClass={"font-semibold tracking-wider !text-lg"}
-              href="jobs"
-            >
-              Jobs
-            </Navigation.NavLink>
-            <Navigation.NavLink
-              cssClass={"font-semibold tracking-wider !text-lg"}
-              href="contact"
-            >
-              Contact
+              About
             </Navigation.NavLink>
           </nav>
         )}
@@ -66,11 +55,9 @@ export default function NavigationTopBar() {
   else
     return (
       <Navigation>
-        <Navigation.NavLink href="about">About</Navigation.NavLink>
-        <Navigation.NavLink href="projects">Projects</Navigation.NavLink>
-        <Navigation.NavLink href="skills">Skills</Navigation.NavLink>
         <Navigation.NavLink href="jobs">Jobs</Navigation.NavLink>
-        <Navigation.NavLink href="contact">Contact</Navigation.NavLink>
+        <Navigation.NavLink href="projects">Projects</Navigation.NavLink>
+        <Navigation.NavLink href="about">About</Navigation.NavLink>
         {/* <AvatarIcon /> */}
       </Navigation>
     );

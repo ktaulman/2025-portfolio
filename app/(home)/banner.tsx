@@ -1,10 +1,8 @@
 "use client";
 import { useScreenWidthStore } from "@/app/_providers/screen-width-provider";
 import Image from "next/image";
-import AvatarIcon from "../_components/icons/avatar-icon";
 export default function Banner() {
   const { screenWidth } = useScreenWidthStore();
-  console.log({ screenWidth });
   const svgUnitWidth =
     screenWidth < 650 ? screenWidth * 0.9 : screenWidth * 0.6;
   const x = {
@@ -19,7 +17,7 @@ export default function Banner() {
       third: screenWidth * 0.5 * 0.8,
     },
   };
-
+  const isMobileDisplay = screenWidth < 650;
   return (
     <div
       className={`w-full grow flex flex-col min-md:flex-row min-md: justify-start items-center gap-10 relative my-16`}
@@ -32,17 +30,23 @@ export default function Banner() {
         className=""
       /> */}
       <Image
-        src="/images/linkedin.jpg"
+        src={
+          isMobileDisplay
+            ? "/images/linkedin-mobile.jpg"
+            : "/images/linkedin.jpg"
+        }
         alt="nav bar avatar icon"
         className="bg-center bg-no-repeat aspect-square bg-cover rounded-full border-4 border-white shadow-white shadow-xs "
-        width={screenWidth < 650 ? 180 : 200}
-        height={screenWidth < 650 ? 180 : 200}
+        width={isMobileDisplay ? 180 : 200}
+        height={isMobileDisplay ? 180 : 200}
       />
       <div>
-        <h1 className=" text-4xl tracking-wider">Hi, I&apos;m Kevin.</h1>
+        <h1 className=" text-4xl tracking-wider text-white font-semibold">
+          Hi, I&apos;m Kevin.
+        </h1>
         <p className="text-base text-gray-500 mt-4">
-          I'm an Engineer with experience building SaaS applications in multiple
-          front-end frameworks and full-stack development.
+          I&apos;m an Engineer with experience building SaaS applications in
+          multiple front-end frameworks and full-stack development.
         </p>
       </div>
     </div>

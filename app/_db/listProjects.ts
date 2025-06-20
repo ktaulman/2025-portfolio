@@ -11,7 +11,7 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    title: "Steambook",
+    title: "Steambook (Full-Stack)",
     summary: "A review site for finding and sharing trending Steam games.",
     description: [
       "Built with Next.js, TypeScript, and Tailwind CSS. Added a custom CMS for managing reviews and game data. Deployed on Vercel.",
@@ -26,7 +26,7 @@ const projects: Project[] = [
     endYear: 2025,
   },
   {
-    title: "Wedding Website",
+    title: "Wedding Website (Full-Stack)",
     summary:
       "Designed by my wife, built by me. Used for RSVPs, meal selections, and event information.",
     description: [
@@ -42,7 +42,7 @@ const projects: Project[] = [
   {
     title: "Non-Profit IT Volunteer Work",
     summary:
-      "Helped design, build, and deploy a website for fundraising, event management, and spreading the word.",
+      "Helped design, build, and deploy a website for fundraising, event management, and spreading the word. Stayed on another two years as Technology Director",
     description: [
       "Setup credit, debit, and ACH payments via Stripe on the href, Google Workspace for Nonprofits for email and secure collaboration on Google Drive, a Twilio phone number for event registrations and donations over voice or text, and building a small Sanity CMS UI for enabling self-service by board members.",
       "Registered non-profit accounts and secured non-profit discounting from our Twilio, AWS, Google, and Stripe.",
