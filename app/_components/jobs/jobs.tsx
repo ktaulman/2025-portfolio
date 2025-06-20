@@ -1,4 +1,4 @@
-import BriefcaseIcon from "@/app/(home)/components/icons/briefcase-icon";
+import BriefcaseIcon from "@/app/_components/icons/briefcase-icon";
 import { ReactNode } from "react";
 import SectionHeader from "../text/section-header";
 

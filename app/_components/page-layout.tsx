@@ -18,14 +18,14 @@ function Header({ children }: { children: ReactNode }) {
 }
 function Body({ children }: { children: ReactNode }) {
   return (
-    <main className="w-full max-w-7xl flex flex-col items-start  flex-1 px-12 min-m:px-24 gap-12">
+    <main className="w-full max-w-7xl flex flex-col items-start  flex-1 px-12 min-md:px-64 gap-12 min-md:gap-4">
       {children}
     </main>
   );
 }
 function Footer({ children }: { children: ReactNode }) {
   return (
-    <footer className="flex justify-center flex-1  flex-wrap  w-full ">
+    <footer className="flex justify-center flex-1  flex-wrap  w-full mt-15">
       {children}
     </footer>
   );

@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import PageLayout from "./_components/page-layout";
-import WebsiteIcon from "./(home)/components/icons/website-icon";
+import WebsiteIcon from "./_components/icons/website-icon";
 import WebsiteHeading from "./_components/text/website-heading";
 import Navigation from "./_components/navigation";
-import AvatarIcon from "./(home)/components/icons/avatar-icon";
-import LinkedinIcon from "./(home)/components/icons/linkedin-icon";
-import GithubIcon from "./(home)/components/icons/github-icon";
-import { ScreenWidthProvider } from "./_providers/screen-width-provider";
+import LinkedinIcon from "./_components/icons/linkedin-icon";
+import GithubIcon from "./_components/icons/github-icon";
 import NavigationTopBar from "./(root-layout)/navigation-top-bar";
 
 const geistSans = Geist({
@@ -44,11 +42,9 @@ export default function RootLayout({
           <PageLayout.Header>
             <div className="flex gap-3 items-center">
               <WebsiteIcon />
-              <WebsiteHeading>Kevin's Portfolio</WebsiteHeading>
+              <WebsiteHeading>Kevin&apos;s Portfolio</WebsiteHeading>
             </div>
-            <ScreenWidthProvider>
-              <NavigationTopBar />
-            </ScreenWidthProvider>
+            <NavigationTopBar />
           </PageLayout.Header>
 
           {/* Main Body Start */}
@@ -66,7 +62,7 @@ export default function RootLayout({
             </Navigation>
 
             <p className="text-[#9dabb8] text-base text-center py-2 font-normal leading-normal w-full ">
-              @2024 Kevin's Portfolio. All rights reserved.
+              @2024 Kevin&apos;s Portfolio. All rights reserved.
             </p>
           </PageLayout.Footer>
         </PageLayout>

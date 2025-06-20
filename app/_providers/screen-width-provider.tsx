@@ -7,6 +7,7 @@ import {
   createContext,
   Dispatch,
   SetStateAction,
+  useEffect,
 } from "react";
 
 type ScreenWidthStore = {
@@ -23,9 +24,18 @@ export function useScreenWidthContext() {
   return currentContext;
 }
 
-function useScreenWidthStore(): ScreenWidthStore {
+export function useScreenWidthStore(): ScreenWidthStore {
   const [screenWidth, setScreenWidth] = useState(0);
-  const handleResize;
+  useEffect(() => {
+    console.log("setting up store");
+    setScreenWidth(window.innerWidth);
+    const setWidth = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", setWidth);
+    return () => window.removeEventListener("resize", setWidth);
+  }, [setScreenWidth]);
+
   const value = useMemo(() => ({ screenWidth, setScreenWidth }), [screenWidth]);
   return value;
 }
@@ -33,7 +43,7 @@ function useScreenWidthStore(): ScreenWidthStore {
 export function ScreenWidthProvider({ children }: { children: ReactNode }) {
   // const currentContext = useContext(ScreenWidthContext)
   const store = useScreenWidthStore();
-
+  console.log("ScreenWidthProvider", { store });
   return (
     <ScreenWidthContext.Provider value={{ ...store }}>
       {children}
