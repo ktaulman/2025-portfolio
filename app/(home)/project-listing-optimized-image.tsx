@@ -10,11 +10,8 @@ type Image = {
 export default function ProjectListingOptimizedImage({ imageSrc, alt }: Image) {
   const { screenWidth } = useScreenWidthStore();
   const isNotMobilePhoneScreen = screenWidth > 650;
-  const width = isNotMobilePhoneScreen ? 500 : 350;
-  const height = isNotMobilePhoneScreen ? 550 : 300;
-  const src = isNotMobilePhoneScreen
-    ? imageSrc
-    : imageSrc.replace(".png", "-sm.png");
+  const width = isNotMobilePhoneScreen ? 400 : 300;
+  const height = isNotMobilePhoneScreen ? 300 : 200;
 
-  return <Card.Image src={src} alt={alt} width={width} height={height} />;
+  return <Card.Image src={imageSrc} alt={alt} width={width} height={height} />;
 }

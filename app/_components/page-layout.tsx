@@ -18,7 +18,7 @@ function Header({ children }: { children: ReactNode }) {
 }
 function Body({ children }: { children: ReactNode }) {
   return (
-    <main className="w-full max-w-7xl flex flex-col items-start  flex-1 px-12 min-md:px-64 gap-10 min-md:gap-4 bg-[#111418] ">
+    <main className="w-full flex flex-col items-start  flex-1 px-12 min-md:px-40 gap-10 min-md:gap-4 bg-[#111418] ">
       {children}
     </main>
   );

@@ -16,9 +16,7 @@ type CardLinkProps = Children & {
 };
 function Card({ children }: Children) {
   return (
-    <article className="max-w-[280px] flex flex-col  min-h-52 grow ">
-      {children}
-    </article>
+    <article className=" flex flex-col flex-1 min-h-52  ">{children}</article>
   );
 }
 function CardImage({ src, alt, width, height }: Image) {
@@ -28,7 +26,7 @@ function CardImage({ src, alt, width, height }: Image) {
       alt={alt}
       width={width}
       height={height}
-      className="aspect-video rounded-lg"
+      className={`rounded-lg max-w-[${width}px] min-w-[${width}px max-h-[${height}px] min-h-[${height}px`}
     />
   );
 }
