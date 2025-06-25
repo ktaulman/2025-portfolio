@@ -1,4 +1,5 @@
 "use client";
+import SectionDescription from "@/app/_components/text/section-description";
 import { useScreenWidthStore } from "@/app/_providers/screen-width-provider";
 import Image from "next/image";
 export default function AboutBanner() {
@@ -20,7 +21,7 @@ export default function AboutBanner() {
 
   return (
     <div
-      className={`w-full grow flex flex-col min-md:flex-row min-md: justify-start items-center gap-10 relative my-16`}
+      className={`w-full grow flex flex-col min-md:flex-row min-md: justify-start items-center gap-10 relative mb-16`}
     >
       {/* <Image
         src="/images/banner.webp"
@@ -42,6 +43,11 @@ export default function AboutBanner() {
         <p className="text-base text-gray-500 mt-4">
           Web Development | Front-End Engineer | Full-Stack Engineer
         </p>
+        <SectionDescription>
+          I&apos;m a passionate developer with a somewhat colorful/diverse
+          career background. I enjoy building the technology a company will
+          bring to market.
+        </SectionDescription>
       </div>
     </div>
   );

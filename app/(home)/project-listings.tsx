@@ -20,7 +20,9 @@ export default async function ProjectListings() {
               <Card.Title>{title}</Card.Title>
               <Card.Description>{summary}</Card.Description>
               {id === 0 && (
-                <p className="text-xs text-blue-900">Under Development</p>
+                <p className="text-xs text-blue-600 min-lg:text-base underline">
+                  Under Development
+                </p>
               )}
               {id !== 0 && <Card.Link href={href}>Live Website</Card.Link>}
             </Card>

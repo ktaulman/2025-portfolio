@@ -6,7 +6,10 @@ export default async function JobListings() {
   return (
     <Jobs>
       {jobsData.map(
-        ({ id, company, title, startMonthYear, endMonthYear }, i) => {
+        (
+          { id, company, title, startMonthYear, endMonthYear, description },
+          i
+        ) => {
           const isLastItem = i === jobsData.length - 1;
           return (
             <Jobs.Item key={id} lineToNextJob={!isLastItem}>
@@ -14,6 +17,16 @@ export default async function JobListings() {
               <Jobs.ItemDescription>
                 {company} | {startMonthYear} - {endMonthYear}
               </Jobs.ItemDescription>
+              <ul className="list-disc">
+                {description.map((paragraph, i) => (
+                  <li
+                    className="text-white text-sm py-3 ml-6 min-lg:text-xl"
+                    key={`paragraph_${id}_${i}`}
+                  >
+                    {paragraph}
+                  </li>
+                ))}
+              </ul>
             </Jobs.Item>
           );
         }

@@ -7,7 +7,6 @@ import WebsiteHeading from "./_components/text/website-heading";
 import Navigation from "./_components/navigation";
 import LinkedinIcon from "./_components/icons/linkedin-icon";
 import GithubIcon from "./_components/icons/github-icon";
-import NavigationTopBar from "./(root-layout)/navigation-top-bar";
 import Link from "next/link";
 
 const geistSans = Geist({
@@ -45,7 +44,7 @@ export default function RootLayout({
             <WebsiteIcon />
             <WebsiteHeading>Kevin&apos;s Portfolio</WebsiteHeading>
           </Link>
-          <NavigationTopBar />
+          {/* <NavigationTopBar /> */}
         </PageLayout.Header>
 
         {/* Main Body Start */}

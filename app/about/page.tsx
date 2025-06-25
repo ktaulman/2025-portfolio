@@ -13,11 +13,7 @@ export default function Home() {
   return (
     <PageLayout.Body>
       <AboutBanner />
-      <SectionDescription>
-        I&apos;m a passionate developer with a somewhat colorful/diverse career
-        background. I enjoy building the technology a company will bring to
-        market.
-      </SectionDescription>
+
       <Suspense fallback={"Loading..."}>
         <SkillListings />
       </Suspense>

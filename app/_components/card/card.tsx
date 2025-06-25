@@ -26,32 +26,34 @@ function CardImage({ src, alt, width, height }: Image) {
       alt={alt}
       width={width}
       height={height}
-      className={`rounded-lg max-w-[${width}px] min-w-[${width}px max-h-[${height}px] min-h-[${height}px`}
+      className={`rounded-lg max-w-[${width}px] min-w-[${width}px max-h-[${height}px] min-h-[${height}px `}
     />
   );
 }
 function Title({ children }: Children) {
   return (
-    <h2 className="text-white text-base font-medium leading-normal mt-4">
+    <h2 className="text-white text-base font-medium leading-normal mt-4 min-lg:text-3xl">
       {children}
     </h2>
   );
 }
 function Summary({ children }: Children) {
   return (
-    <p className="text-white text-sm font-medium leading-normal">{children}</p>
+    <p className="text-white text-sm font-medium leading-normal min-lg:text-lg">
+      {children}
+    </p>
   );
 }
 function Description({ children }: Children) {
   return (
-    <p className="text-[#9daab8] text-xs font-normal leading-normal grow">
+    <p className="text-[#9daab8] text-xs font-normal leading-normal grow min-lg:text-lg">
       {children}
     </p>
   );
 }
 function CardLink({ children, href }: CardLinkProps) {
   return (
-    <a className="text-xs text-indigo-800 " href={href}>
+    <a className="text-xs text-blue-600 min-lg:text-base underline" href={href}>
       {children}
     </a>
   );

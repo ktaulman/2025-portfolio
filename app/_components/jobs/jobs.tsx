@@ -9,7 +9,7 @@ type Item = Children & {
 
 function Jobs({ children }: Children) {
   return (
-    <article className="flex flex-col min-h">
+    <article className="flex flex-col min-h min-lg">
       <SectionHeader>Jobs</SectionHeader>
       {children}
     </article>
@@ -30,14 +30,14 @@ function Item({ children, lineToNextJob }: Item) {
 
 function ItemTitle({ children }: Children) {
   return (
-    <p className="text-white text-base font-medium leading-normal">
+    <p className="text-white text-base font-medium min-lg:text-3xl">
       {children}
     </p>
   );
 }
 function ItemDescription({ children }: Children) {
   return (
-    <p className="text-[#9daab8] text-sm font-normal leading-normal">
+    <p className="text-[#9daab8] text-sm font-normal min-lg:text-lg">
       {children}
     </p>
   );

@@ -3,20 +3,20 @@ import { useScreenWidthStore } from "@/app/_providers/screen-width-provider";
 import Image from "next/image";
 export default function Banner() {
   const { screenWidth } = useScreenWidthStore();
-  const svgUnitWidth =
-    screenWidth < 650 ? screenWidth * 0.9 : screenWidth * 0.6;
-  const x = {
-    right: {
-      first: screenWidth * 0.6 * 0.9,
-      second: screenWidth * 0.6 * 0.85,
-      third: screenWidth * 0.6 * 0.8,
-    },
-    center: {
-      first: screenWidth * 0.3 * 0.9,
-      second: screenWidth * 0.3 * 0.95,
-      third: screenWidth * 0.5 * 0.8,
-    },
-  };
+  // const svgUnitWidth =
+  //   screenWidth < 650 ? screenWidth * 0.9 : screenWidth * 0.6;
+  // const x = {
+  //   right: {
+  //     first: screenWidth * 0.6 * 0.9,
+  //     second: screenWidth * 0.6 * 0.85,
+  //     third: screenWidth * 0.6 * 0.8,
+  //   },
+  //   center: {
+  //     first: screenWidth * 0.3 * 0.9,
+  //     second: screenWidth * 0.3 * 0.95,
+  //     third: screenWidth * 0.5 * 0.8,
+  //   },
+  // };
   const isMobileDisplay = screenWidth < 650;
   return (
     <div
@@ -41,89 +41,14 @@ export default function Banner() {
         height={isMobileDisplay ? 180 : 200}
       />
       <div>
-        <h1 className=" text-4xl tracking-wider text-white font-semibold">
+        <h1 className=" text-4xl min-lg:text-8xl tracking-wider text-white font-semibold">
           Hi, I&apos;m Kevin.
         </h1>
-        <p className="text-base text-gray-500 mt-4">
+        <p className="text-base min-lg:text-xl text-gray-500 mt-4">
           I&apos;m an Engineer with experience building SaaS applications in
           multiple front-end frameworks and full-stack development.
         </p>
       </div>
-    </div>
-  );
-  return (
-    <div className="w-full flex justify-center">
-      <svg
-        width={svgUnitWidth}
-        height="400"
-        viewBox={`0 0 ${svgUnitWidth} 400`}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect width={svgUnitWidth} height="400" fill="#111418" />
-
-        <g>
-          {/* Left Cluster */}
-          {/* <circle cx="80" cy="70" r="20" fill="#78752A" opacity="0.6" />
-          <circle cx="40" cy="110" r="25" fill="#78752A" opacity="0.7" /> */}
-          <circle cx="20" cy="120" r="120" fill="#78752A" opacity="0.5" />
-
-          {/* Center Clust  */}
-          <circle
-            cx={x.center.first}
-            cy="40"
-            r="60"
-            fill="#2D782A"
-            opacity="0.6"
-          />
-          {/* <circle
-            cx={x.center.second}
-            cy="210"
-            r="40"
-            fill="#2D782A"
-            opacity="0.7"
-          />
-          <circle
-            cx={x.center.third}
-            cy="120"
-            r="50"
-            fill="#2D782A"
-            opacity="0.5"
-          /> */}
-
-          {/* Right Cluster */}
-          <circle
-            cx={x.right.first}
-            cy="320"
-            r="80"
-            fill="#3a3d98"
-            opacity="0.6"
-          />
-          {/* <circle
-            cx={x.right.second}
-            cy="410"
-            r="40"
-            fill="#4a4db9"
-            opacity="0.7"
-          />
-          <circle
-            cx={x.right.third}
-            cy="370"
-            r="50"
-            fill="#2a2d78"
-            opacity="0.5"
-          /> */}
-        </g>
-
-        <text
-          x={screenWidth > 650 ? screenWidth * 0.05 : screenWidth * 0}
-          y="250"
-          fill="#e5e7eb"
-          fontSize={screenWidth > 650 ? "64" : "48"}
-          fontFamily="sans-serif"
-        >
-          Hi, I&apos;m Kevin
-        </text>
-      </svg>
     </div>
   );
 }
